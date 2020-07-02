@@ -54,8 +54,10 @@ public class ActaAPI {
             log.error("El acta con el código " + id + " no existe");
             ResponseEntity.badRequest().build();
         }
-
-        actaService.deleteById(id);
+        Acta acta = new Acta();
+        acta = actaService.findById(id).get();
+        acta.setEstatus('I');
+        actaService.save(acta);
 
         return ResponseEntity.ok().build();
     }
