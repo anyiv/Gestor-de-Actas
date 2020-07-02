@@ -16,6 +16,10 @@ public class ActaService {
         return actaRepository.findAll();
     }
 
+    public List<Acta> actasActivas(){
+        return actaRepository.findByEstatus('A');
+    }
+
     public Optional<Acta> findById(Integer id) {
         return actaRepository.findById(id);
     }
