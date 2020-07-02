@@ -1,1 +1,6 @@
 com/lab2/backend/BackendApplication.class
+com/lab2/backend/restful/acta/ActaAPI.class
+com/lab2/backend/restful/acta/ActaRepository.class
+com/lab2/backend/restful/acta/ActaController.class
+com/lab2/backend/restful/acta/ActaService.class
+com/lab2/backend/restful/acta/Acta.class
