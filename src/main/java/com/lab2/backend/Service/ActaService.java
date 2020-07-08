@@ -1,4 +1,4 @@
-package com.lab2.backend.restful.acta;
+package com.lab2.backend.Service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

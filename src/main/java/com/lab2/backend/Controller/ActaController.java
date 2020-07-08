@@ -1,4 +1,4 @@
-package com.lab2.backend.restful.acta;
+package com.lab2.backend.Controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

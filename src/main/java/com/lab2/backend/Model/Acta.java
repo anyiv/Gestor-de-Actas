@@ -1,4 +1,4 @@
-package com.lab2.backend.restful.acta;
+package com.lab2.backend.Model;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

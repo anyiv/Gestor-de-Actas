@@ -1,4 +1,4 @@
-package com.lab2.backend.restful.acta;
+package com.lab2.backend.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
