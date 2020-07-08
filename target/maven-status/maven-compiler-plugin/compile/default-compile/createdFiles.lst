@@ -1,6 +1,13 @@
 com/lab2/backend/BackendApplication.class
 com/lab2/backend/model/Acta.class
+com/lab2/backend/repository/PdfRepository.class
 com/lab2/backend/model/Usuario.class
 com/lab2/backend/repository/ActaRepository.class
+com/lab2/backend/service/PdfService.class
+com/lab2/backend/exception/MyFileNotFoundException.class
+com/lab2/backend/controller/PdfController.class
+com/lab2/backend/exception/FileStorageException.class
 com/lab2/backend/service/ActaService.class
 com/lab2/backend/controller/ActaController.class
+com/lab2/backend/model/Pdf.class
+com/lab2/backend/payload/UploadFileResponse.class
