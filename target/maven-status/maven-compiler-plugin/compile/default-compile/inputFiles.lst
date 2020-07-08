@@ -1,5 +1,6 @@
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Usuario.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/exception/FileStorageException.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/DecanatoController.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/ActaRepository.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/BackendApplication.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Acta.java
@@ -9,7 +10,9 @@
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/PdfController.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Pdf.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/ActaService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/DecanatoService.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/PdfService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/DecanatoRepository.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/PdfRepository.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/TipoUsuario.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Decanato.java

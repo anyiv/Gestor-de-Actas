@@ -39,7 +39,7 @@ public class DecanatoController {
 
     //consulta un solo registro por id
     @GetMapping("/{id}")
-    public ResponseEntity<Decanato> findById(@PathVariable Integer id) {
+    public ResponseEntity<Decanato> findById(@PathVariable Long id) {
         Optional<Decanato> dec = decService.findById(id);
         if (!dec.isPresent()) {
             ResponseEntity.badRequest().build();
@@ -50,7 +50,7 @@ public class DecanatoController {
 
     //actualiza las actas. Nota: Se deben pasar con todos los atributos porque sino le pone null
     @PutMapping("/{id}")
-    public ResponseEntity<Decanato> update(@PathVariable Integer id, @Valid @RequestBody Decanato dec) {
+    public ResponseEntity<Decanato> update(@PathVariable Long id, @Valid @RequestBody Decanato dec) {
         if (!decService.findById(id).isPresent()) {
             ResponseEntity.badRequest().build();
         }
@@ -60,7 +60,7 @@ public class DecanatoController {
     
     //elimina las actas de forma lógica
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable Integer id) {
+    public ResponseEntity delete(@PathVariable Long id) {
         if (!decService.findById(id).isPresent()) {
             ResponseEntity.badRequest().build();
         }

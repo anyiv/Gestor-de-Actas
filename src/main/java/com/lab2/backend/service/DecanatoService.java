@@ -24,7 +24,7 @@ public class DecanatoService {
         return decanatoRepository.findByEstatus('A');
     }
 
-    public Optional<Decanato> findById(Integer id) {
+    public Optional<Decanato> findById(Long id) {
         return decanatoRepository.findById(id);
     }
 
@@ -32,7 +32,7 @@ public class DecanatoService {
         return decanatoRepository.save(dec);
     }
 
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         decanatoRepository.deleteById(id);
     }
 }

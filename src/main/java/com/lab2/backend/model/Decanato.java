@@ -23,7 +23,7 @@ import javax.persistence.CascadeType;
 public class Decanato {
     @Id
     @GeneratedValue
-    private String codigo;
+    private Long codigo;
 
     private String nombre;
 
@@ -45,7 +45,7 @@ public class Decanato {
     public Decanato() {
     }
 
-    public Decanato(String codigo, String nombre, String direccion, String telefono, Character estatus, List<Usuario> usuarios, List<Acta> actas) {
+    public Decanato(Long codigo, String nombre, String direccion, String telefono, Character estatus, List<Usuario> usuarios, List<Acta> actas) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -55,11 +55,11 @@ public class Decanato {
         this.actas = actas;
     }
 
-    public String getCodigo() {
+    public Long getCodigo() {
         return this.codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 
@@ -111,7 +111,7 @@ public class Decanato {
         this.actas = actas;
     }
 
-    public Decanato codigo(String codigo) {
+    public Decanato codigo(Long codigo) {
         this.codigo = codigo;
         return this;
     }
@@ -154,7 +154,7 @@ public class Decanato {
             return false;
         }
         Decanato decanato = (Decanato) o;
-        return Objects.equals(codigo, decanato.codigo) && Objects.equals(nombre, decanato.nombre) && Objects.equals(direccion, decanato.direccion) && Objects.equals(telefono, decanato.telefono) && estatus == decanato.estatus && Objects.equals(usuarios, decanato.usuarios) && Objects.equals(actas, decanato.actas);
+        return Objects.equals(codigo, decanato.codigo) && Objects.equals(nombre, decanato.nombre) && Objects.equals(direccion, decanato.direccion) && Objects.equals(telefono, decanato.telefono) && Objects.equals(estatus, decanato.estatus) && Objects.equals(usuarios, decanato.usuarios) && Objects.equals(actas, decanato.actas);
     }
 
     @Override
@@ -174,5 +174,6 @@ public class Decanato {
             ", actas='" + getActas() + "'" +
             "}";
     }
+
 
 }
