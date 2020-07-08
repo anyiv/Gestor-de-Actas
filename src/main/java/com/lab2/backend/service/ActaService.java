@@ -1,6 +1,8 @@
 package com.lab2.backend.service;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +14,8 @@ import com.lab2.backend.model.Acta;
 
 @RequiredArgsConstructor
 public class ActaService {
-    private final ActaRepository actaRepository;
+    @Autowired
+    private ActaRepository actaRepository;
 
     public List<Acta> findAll() {
         return actaRepository.findAll();

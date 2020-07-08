@@ -2,6 +2,8 @@ package com.lab2.backend.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -16,8 +18,8 @@ import com.lab2.backend.model.Acta;
 @Slf4j
 @RequiredArgsConstructor
 public class ActaController {
-    private final ActaService actaService;
-
+    @Autowired
+    private ActaService actaService;
 
     //devuelve una lista con todas las actas 
     @GetMapping

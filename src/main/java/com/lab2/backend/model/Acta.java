@@ -10,6 +10,11 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
+import com.lab2.backend.model.Pdf;
+import com.lab2.backend.model.Decanato;
+import javax.persistence.OneToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.ManyToOne;
 
 @Entity
 
@@ -30,6 +35,12 @@ public class Acta {
 
     @UpdateTimestamp
     private Date ult_actualizacion;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Pdf pdf;
+
+    @ManyToOne
+    private Decanato decanato;
 
 
     public Acta() {
