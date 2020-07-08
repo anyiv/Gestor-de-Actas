@@ -1,4 +1,5 @@
-package com.lab2.backend.Repository;
+package com.lab2.backend.repository;
+import com.lab2.backend.model.Acta;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;

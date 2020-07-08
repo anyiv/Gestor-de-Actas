@@ -1,4 +1,4 @@
-package com.lab2.backend.Model;
+package com.lab2.backend.model;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -14,20 +14,14 @@ import java.util.Date;
 @Entity
 
 @Data
-public class Acta {
+public class Usuario {
     @Id
     @GeneratedValue
-    private Integer codigo;
+    private String codigo;
 
-    private Integer tipo;
+    // private String nombre;
 
-    private String descripcion;
+    // private String apellido;
 
-    private Character estatus;
 
-    @CreationTimestamp
-    private Date fecha;
-
-    @UpdateTimestamp
-    private Date ult_actualizacion;
 }

@@ -1,10 +1,12 @@
-package com.lab2.backend.Service;
+package com.lab2.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import com.lab2.backend.repository.ActaRepository;
+import com.lab2.backend.model.Acta;
 
 @Service
 

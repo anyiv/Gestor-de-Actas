@@ -1,4 +1,4 @@
-package com.lab2.backend.Controller;
+package com.lab2.backend.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
+import com.lab2.backend.service.ActaService;
+import com.lab2.backend.model.Acta;
 
 
 @RestController
