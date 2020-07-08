@@ -32,7 +32,7 @@ public class Usuario {
 
     private String contaseña;
 
-    private char estatus;
+    private Character estatus;
 
     @ManyToOne
     private Decanato decanato;

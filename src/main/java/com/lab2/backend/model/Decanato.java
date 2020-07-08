@@ -31,7 +31,7 @@ public class Decanato {
 
     private String telefono;
 
-    private char estatus;
+    private Character estatus;
 
     @JsonIgnore
     @OneToMany(mappedBy="decanato", cascade = CascadeType.ALL)
@@ -45,7 +45,7 @@ public class Decanato {
     public Decanato() {
     }
 
-    public Decanato(String codigo, String nombre, String direccion, String telefono, char estatus, List<Usuario> usuarios, List<Acta> actas) {
+    public Decanato(String codigo, String nombre, String direccion, String telefono, Character estatus, List<Usuario> usuarios, List<Acta> actas) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -87,11 +87,11 @@ public class Decanato {
         this.telefono = telefono;
     }
 
-    public char getEstatus() {
+    public Character getEstatus() {
         return this.estatus;
     }
 
-    public void setEstatus(char estatus) {
+    public void setEstatus(Character estatus) {
         this.estatus = estatus;
     }
 
@@ -131,7 +131,7 @@ public class Decanato {
         return this;
     }
 
-    public Decanato estatus(char estatus) {
+    public Decanato estatus(Character estatus) {
         this.estatus = estatus;
         return this;
     }
