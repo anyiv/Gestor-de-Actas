@@ -13,6 +13,7 @@ import java.util.Date;
 import com.lab2.backend.model.Decanato;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
+import com.lab2.backend.model.TipoUsuario;
 
 @Entity
 
@@ -35,6 +36,9 @@ public class Usuario {
 
     @ManyToOne
     private Decanato decanato;
+
+    @ManyToOne
+    private TipoUsuario tipouser;
 
 
     public String getCedula() {
