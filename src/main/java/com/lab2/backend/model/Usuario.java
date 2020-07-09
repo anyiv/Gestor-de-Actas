@@ -10,6 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
+import com.lab2.backend.model.Decanato;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import com.lab2.backend.model.TipoUsuario;
 
 @Entity
 
@@ -26,7 +30,15 @@ public class Usuario {
 
     private String telefono;
 
+    private String contaseña;
 
+    private Character estatus;
+
+    @ManyToOne
+    private Decanato decanato;
+
+    @ManyToOne
+    private TipoUsuario tipouser;
 
 
     public String getCedula() {

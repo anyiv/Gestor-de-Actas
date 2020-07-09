@@ -3,6 +3,8 @@ package com.lab2.backend.model;
 import org.hibernate.annotations.GenericGenerator;
 import lombok.Data;
 import javax.persistence.*;
+import com.lab2.backend.model.Acta;
+import javax.persistence.OneToOne;
 
 @Entity
 @Data
@@ -16,6 +18,9 @@ public class Pdf {
 
     private String fileType;
 
+    @OneToOne(mappedBy = "pdf")
+	private Acta acta;
+	 
     @Lob
     private byte[] data;
 
@@ -23,12 +28,12 @@ public class Pdf {
 
     }
 
-    public Pdf(String fileName, String fileType, byte[] data) {
+    public Pdf(String fileName, String fileType, Acta acta, byte[] data) {
         this.fileName = fileName;
         this.fileType = fileType;
+        this.acta = acta;
         this.data = data;
     }
-    
 
     public String getId() {
         return this.id;
@@ -61,5 +66,15 @@ public class Pdf {
     public void setData(byte[] data) {
         this.data = data;
     }
+
+    public Acta getActa() {
+        return this.acta;
+    }
+
+    public void setActa(Acta acta) {
+        this.acta = acta;
+    }
+
+
     
 }
