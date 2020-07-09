@@ -22,7 +22,7 @@ import javax.persistence.CascadeType;
 @Data
 public class Decanato {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
     private String nombre;
@@ -34,11 +34,11 @@ public class Decanato {
     private Character estatus;
 
     @JsonIgnore
-    @OneToMany(mappedBy="decanato", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="decanato")
     private List<Usuario> usuarios;
 
     @JsonIgnore
-    @OneToMany(mappedBy="decanato", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="decanato")
     private List<Acta> actas;
 
 

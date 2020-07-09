@@ -14,6 +14,7 @@ import com.lab2.backend.model.Pdf;
 import com.lab2.backend.model.Decanato;
 import javax.persistence.OneToOne;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -21,7 +22,7 @@ import javax.persistence.ManyToOne;
 @Data
 public class Acta {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
     private Integer tipo;
@@ -31,12 +32,13 @@ public class Acta {
     private Character estatus;
 
     @CreationTimestamp
+    @Column(updatable = false)
     private Date fecha;
 
     @UpdateTimestamp
     private Date ult_actualizacion;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Pdf pdf;
 
     @ManyToOne
@@ -53,6 +55,18 @@ public class Acta {
         this.estatus = estatus;
         this.fecha = fecha;
         this.ult_actualizacion = ult_actualizacion;
+    }
+
+
+    public Acta(Integer codigo, Integer tipo, String descripcion, Character estatus, Date fecha, Date ult_actualizacion, Pdf pdf, Decanato decanato) {
+        this.codigo = codigo;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.estatus = estatus;
+        this.fecha = fecha;
+        this.ult_actualizacion = ult_actualizacion;
+        this.pdf = pdf;
+        this.decanato = decanato;
     }
 
     public Integer getCodigo() {
@@ -159,6 +173,23 @@ public class Acta {
             ", fecha='" + getFecha() + "'" +
             ", ult_actualizacion='" + getUlt_actualizacion() + "'" +
             "}";
+    }
+
+
+    public Pdf getPdf() {
+        return this.pdf;
+    }
+
+    public void setPdf(Pdf pdf) {
+        this.pdf = pdf;
+    }
+
+    public Decanato getDecanato() {
+        return this.decanato;
+    }
+
+    public void setDecanato(Decanato decanato) {
+        this.decanato = decanato;
     }
 
 }
