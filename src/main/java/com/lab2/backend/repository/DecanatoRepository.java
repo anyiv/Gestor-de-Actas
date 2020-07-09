@@ -6,5 +6,6 @@ import java.util.List;
 public interface DecanatoRepository extends JpaRepository<Decanato, Long>{
     List<Decanato> findByEstatus(Character estatus);
 
+    Long countByEstatus (Character estatus);
 }
 

@@ -35,4 +35,8 @@ public class DecanatoService {
     public void deleteById(Long id) {
         decanatoRepository.deleteById(id);
     }
+
+    public Long countDec(Character estatus){
+        return decanatoRepository.countByEstatus(estatus);
+    }
 }
