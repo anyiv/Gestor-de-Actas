@@ -8,11 +8,14 @@
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/ActaController.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/payload/UploadFileResponse.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/PdfController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/UsuarioService.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Pdf.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/ActaService.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/DecanatoService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/DashController.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/PdfService.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/DecanatoRepository.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/UsuarioRepository.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/PdfRepository.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/TipoUsuario.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Decanato.java
