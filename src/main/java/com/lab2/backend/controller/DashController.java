@@ -29,8 +29,8 @@ public class DashController {
     @GetMapping(value = "/contadores", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String>  contadores(){
         return ResponseEntity.ok("{" + 
-            "\"actas\" : \"" + actaService.countActas('A').toString() + "\"" + 
-            "\"decanatos\" : \"" + decService.countDec('A').toString() + "\"" + 
+            "\"actas\" : \"" + actaService.countActas('A').toString() + "\"," + 
+            "\"decanatos\" : \"" + decService.countDec('A').toString() + "\"," + 
             "\"usuarios\" : \"" + userService.countUser('A').toString() + "\""
         + "}");
     }

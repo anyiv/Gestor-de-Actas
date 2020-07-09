@@ -3,6 +3,8 @@ package com.lab2.backend.model;
 import org.hibernate.annotations.GenericGenerator;
 import lombok.Data;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lab2.backend.model.Acta;
 import javax.persistence.OneToOne;
 
@@ -18,6 +20,7 @@ public class Pdf {
 
     private String fileType;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "pdf")
 	private Acta acta;
 	 
@@ -36,8 +39,7 @@ public class Pdf {
     }
 
 
-    public Pdf(String id, String fileName, String fileType, byte[] data) {
-        this.id = id;
+    public Pdf(String fileName, String fileType, byte[] data) {
         this.fileName = fileName;
         this.fileType = fileType;
         this.data = data;
