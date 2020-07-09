@@ -35,6 +35,9 @@ public class Pdf {
         this.data = data;
     }
 
+    public Pdf(String fileName, String contentType, byte[] bytes) {
+    }
+
     public String getId() {
         return this.id;
     }
