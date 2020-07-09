@@ -2,6 +2,7 @@ package com.lab2.backend.payload.request;
 import javax.validation.constraints.NotBlank;
 
 public class LoginRequest {
+
 	@NotBlank
 	private String username;
 
@@ -15,7 +16,6 @@ public class LoginRequest {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
 	public String getPassword() {
 		return password;
 	}

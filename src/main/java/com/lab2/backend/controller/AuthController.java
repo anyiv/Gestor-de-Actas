@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import com.lab2.backend.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,15 +21,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lab2.backend.model.ERole;
-import com.lab2.backend.model.Role;
-import com.lab2.backend.model.User;
 import com.lab2.backend.payload.request.LoginRequest;
 import com.lab2.backend.payload.request.SignupRequest;
 import com.lab2.backend.payload.response.JwtResponse;
 import com.lab2.backend.payload.response.MessageResponse;
-import com.lab2.backend.repository.RoleRepository;
+import com.lab2.backend.repository.RolRepository;
 import com.lab2.backend.repository.UserRepository;
+import com.lab2.backend.repository.UsuarioRepository;
 import com.lab2.backend.security.jwt.JwtUtils;
 import com.lab2.backend.security.services.UserDetailsImpl;
 
@@ -43,7 +42,7 @@ public class AuthController {
 	UserRepository userRepository;
 
 	@Autowired
-	RoleRepository roleRepository;
+	RolRepository roleRepository;
 
 	@Autowired
 	PasswordEncoder encoder;
@@ -66,10 +65,16 @@ public class AuthController {
 				.collect(Collectors.toList());
 
 		return ResponseEntity.ok(new JwtResponse(jwt, 
-												 userDetails.getId(), 
-												 userDetails.getUsername(), 
-												 userDetails.getEmail(), 
-												 roles));
+												 userDetails.getCedula(),
+				userDetails.getUsername(),
+				userDetails.getEmail(),
+												 userDetails.getNombre(),
+													userDetails.getApellido(),
+
+				userDetails.getTelefono(),
+				userDetails.getEstatus(),
+				userDetails.getDecanato(),
+				roles));
 	}
 
 	@PostMapping("/signup")
@@ -87,9 +92,8 @@ public class AuthController {
 		}
 
 		// Create new user's account
-		User user = new User(signUpRequest.getUsername(), 
-							 signUpRequest.getEmail(),
-							 encoder.encode(signUpRequest.getPassword()));
+		User user = new User(signUpRequest.getCedula(),signUpRequest.getUsername(),signUpRequest.getEmail(),signUpRequest.getNombre(),signUpRequest.getApellido(),signUpRequest.getTelefono(), encoder.encode(signUpRequest.getPassword()),signUpRequest.getEstatus(),signUpRequest.getDecanato());
+
 
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();
