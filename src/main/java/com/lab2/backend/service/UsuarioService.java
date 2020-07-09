@@ -34,6 +34,10 @@ public class UsuarioService {
     public void deleteById(String id) {
         userRepository.deleteById(id);
     }
+
+    public Long countUser(Character estatus){
+        return userRepository.countByEstatus(estatus);
+    }
 }
 
 

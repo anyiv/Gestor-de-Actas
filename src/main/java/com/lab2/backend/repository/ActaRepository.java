@@ -9,4 +9,6 @@ public interface ActaRepository extends JpaRepository<Acta, Integer> {
     List<Acta> findByEstatus(Character estatus);
 
     List<Acta> findByDecanato(Decanato decanato);
+
+    Long countByEstatus (Character estatus);
 }

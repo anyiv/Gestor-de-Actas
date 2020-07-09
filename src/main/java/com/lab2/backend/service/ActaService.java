@@ -47,4 +47,8 @@ public class ActaService {
         decanato = decanatoRepository.findById(id).get();
         return actaRepository.findByDecanato(decanato);
     }
+
+    public Long countActas(Character estatus){
+        return actaRepository.countByEstatus(estatus);
+    }
 }
