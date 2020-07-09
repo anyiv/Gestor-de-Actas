@@ -1,19 +1,14 @@
 package com.lab2.backend.model;
 
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Date;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.GeneratedValue;
-import com.lab2.backend.model.Usuario;
-import com.lab2.backend.model.Acta;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
 
@@ -34,8 +29,11 @@ public class Decanato {
     private Character estatus;
 
     @JsonIgnore
+
     @OneToMany(mappedBy="decanato")
-    private List<Usuario> usuarios;
+    private List<User> users;
+
+
 
     @JsonIgnore
     @OneToMany(mappedBy="decanato")
@@ -45,13 +43,13 @@ public class Decanato {
     public Decanato() {
     }
 
-    public Decanato(Long codigo, String nombre, String direccion, String telefono, Character estatus, List<Usuario> usuarios, List<Acta> actas) {
+    public Decanato(Long codigo, String nombre, String direccion, String telefono, Character estatus, List<User> users, List<Acta> actas) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.estatus = estatus;
-        this.usuarios = usuarios;
+        this.users = users;
         this.actas = actas;
     }
 
@@ -95,12 +93,12 @@ public class Decanato {
         this.estatus = estatus;
     }
 
-    public List<Usuario> getUsuarios() {
-        return this.usuarios;
+    public List<User> getUsers() {
+        return this.users;
     }
 
-    public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     public List<Acta> getActas() {
@@ -136,8 +134,8 @@ public class Decanato {
         return this;
     }
 
-    public Decanato usuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+    public Decanato usuarios(List<User> users) {
+        this.users = users;
         return this;
     }
 
@@ -154,12 +152,12 @@ public class Decanato {
             return false;
         }
         Decanato decanato = (Decanato) o;
-        return Objects.equals(codigo, decanato.codigo) && Objects.equals(nombre, decanato.nombre) && Objects.equals(direccion, decanato.direccion) && Objects.equals(telefono, decanato.telefono) && Objects.equals(estatus, decanato.estatus) && Objects.equals(usuarios, decanato.usuarios) && Objects.equals(actas, decanato.actas);
+        return Objects.equals(codigo, decanato.codigo) && Objects.equals(nombre, decanato.nombre) && Objects.equals(direccion, decanato.direccion) && Objects.equals(telefono, decanato.telefono) && Objects.equals(estatus, decanato.estatus) && Objects.equals(users, decanato.users) && Objects.equals(actas, decanato.actas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigo, nombre, direccion, telefono, estatus, usuarios, actas);
+        return Objects.hash(codigo, nombre, direccion, telefono, estatus, users, actas);
     }
 
     @Override
@@ -170,7 +168,7 @@ public class Decanato {
             ", direccion='" + getDireccion() + "'" +
             ", telefono='" + getTelefono() + "'" +
             ", estatus='" + getEstatus() + "'" +
-            ", usuarios='" + getUsuarios() + "'" +
+            ", usuarios='" + getUsers() + "'" +
             ", actas='" + getActas() + "'" +
             "}";
     }
