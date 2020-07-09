@@ -74,4 +74,10 @@ public class ActaController {
 
         return ResponseEntity.ok().build();
     }
+
+    //filtra actas por decanato 
+    @GetMapping("/decanato/{id}")
+    public ResponseEntity<List<Acta>> actasPorDecanato(@PathVariable Long id) {
+        return ResponseEntity.ok(actaService.findByDecanato(id));
+    }
 }
