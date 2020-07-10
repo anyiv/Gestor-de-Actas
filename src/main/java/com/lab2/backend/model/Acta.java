@@ -1,5 +1,6 @@
 package com.lab2.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -37,6 +38,7 @@ public class Acta {
 
     @UpdateTimestamp
     private Date ult_actualizacion;
+
 
     @OneToOne
     private Pdf pdf;

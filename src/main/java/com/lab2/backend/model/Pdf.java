@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lab2.backend.model.Acta;
 import javax.persistence.OneToOne;
 
+
 @Entity
 @Data
 public class Pdf {
@@ -23,7 +24,8 @@ public class Pdf {
     @JsonIgnore
     @OneToOne(mappedBy = "pdf")
 	private Acta acta;
-	 
+
+    @JsonIgnore
     @Lob
     private byte[] data;
 

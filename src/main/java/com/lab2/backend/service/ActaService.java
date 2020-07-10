@@ -11,6 +11,7 @@ import com.lab2.backend.repository.ActaRepository;
 import com.lab2.backend.repository.DecanatoRepository;
 import com.lab2.backend.model.Acta;
 import com.lab2.backend.model.Decanato;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 
@@ -25,7 +26,7 @@ public class ActaService {
     public List<Acta> findAll() {
         return actaRepository.findAll();
     }
-
+    @Transactional
     public List<Acta> actasActivas(){
         return actaRepository.findByEstatus('A');
     }
@@ -46,6 +47,9 @@ public class ActaService {
         Decanato decanato = new Decanato();
         decanato = decanatoRepository.findById(id).get();
         return actaRepository.findByDecanato(decanato);
+    }
+    public Acta findTopByOrderByCodigoDesc(){
+        return  actaRepository.findTopByOrderByCodigoDesc();
     }
 
     public Long countActas(Character estatus){

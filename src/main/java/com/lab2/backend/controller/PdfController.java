@@ -1,7 +1,9 @@
 package com.lab2.backend.controller;
 
+import com.lab2.backend.model.Acta;
 import com.lab2.backend.model.Pdf;
 import com.lab2.backend.payload.UploadFileResponse;
+import com.lab2.backend.service.ActaService;
 import com.lab2.backend.service.PdfService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/pdf")
 public class PdfController {
@@ -27,6 +30,8 @@ public class PdfController {
 
     @Autowired
     private PdfService pdfService;
+    @Autowired
+    private ActaService actaService;
 
     @PostMapping("/uploadFile")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
@@ -36,7 +41,11 @@ public class PdfController {
                 .path("/downloadFile/")
                 .path(pdf.getId())
                 .toUriString();
-
+        Acta acta = actaService.findTopByOrderByCodigoDesc();
+        System.out.println(acta.getDescripcion());
+        System.out.println(pdf.getFileName());
+        acta.setPdf(pdf);
+        actaService.save(acta);
         return new UploadFileResponse(pdf.getFileName(), fileDownloadUri,
                 file.getContentType(), file.getSize());
     }
