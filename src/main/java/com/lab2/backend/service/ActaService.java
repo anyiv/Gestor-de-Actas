@@ -51,4 +51,8 @@ public class ActaService {
     public Long countActas(Character estatus){
         return actaRepository.countByEstatus(estatus);
     }
+
+    public Integer contarActasPorDecanato(Long cod, Integer mes){
+        return actaRepository.findByActasYDecanato(cod, mes);
+    }
 }

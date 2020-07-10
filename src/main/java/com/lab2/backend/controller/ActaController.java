@@ -36,7 +36,6 @@ public class ActaController {
     //registra las actas con el api
     @PostMapping
     public ResponseEntity create(@Valid @RequestBody Acta acta) {
-        System.out.println(acta.getDecanato());
         return ResponseEntity.ok(actaService.save(acta));
     }
 
