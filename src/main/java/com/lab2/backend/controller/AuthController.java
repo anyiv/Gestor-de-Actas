@@ -31,7 +31,7 @@ import com.lab2.backend.repository.UsuarioRepository;
 import com.lab2.backend.security.jwt.JwtUtils;
 import com.lab2.backend.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600, allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

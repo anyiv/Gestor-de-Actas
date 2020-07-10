@@ -39,7 +39,7 @@ public class UserDetailsImpl implements UserDetails {
 	private Collection<? extends GrantedAuthority> authorities;
 
 	public UserDetailsImpl(String username, String cedula,String email,String nombre, String apellido, String telefono,String password, Character estatus ,
-						   Collection<? extends GrantedAuthority> authorities) {
+						   Decanato decanato, Collection<? extends GrantedAuthority> authorities) {
 		//this.id = id;
 		this.username = username;
 		this.cedula = cedula;
@@ -47,7 +47,7 @@ public class UserDetailsImpl implements UserDetails {
 		this.apellido = apellido;
 		this.email = email;
 		this.telefono = telefono;
-
+		this.decanato=decanato;
 		this.password = password;
 		this.estatus = estatus;
 		this.authorities = authorities;
@@ -69,6 +69,7 @@ public class UserDetailsImpl implements UserDetails {
 				user.getTelefono(),
 				user.getPassword(),
 				user.getEstatus(),
+				user.getDecanato(),
 				authorities);
 	}
 
@@ -89,7 +90,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return null;
+		return this.username;
 	}
 
 	public String getCedula() {
