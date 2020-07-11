@@ -17,6 +17,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.lab2.backend.model.Estado;
 
 @Entity
 
@@ -46,21 +49,24 @@ public class Acta {
     @ManyToOne
     private Decanato decanato;
 
+    @ManyToOne
+    private Estado estado;
 
     public Acta() {
     }
 
-    public Acta(Integer codigo, Integer tipo, String descripcion, Character estatus, Date fecha, Date ult_actualizacion) {
+    public Acta(Integer codigo, Integer tipo, String descripcion, Character estatus, Date fecha, Date ult_actualizacion, Estado estado) {
         this.codigo = codigo;
         this.tipo = tipo;
         this.descripcion = descripcion;
         this.estatus = estatus;
         this.fecha = fecha;
         this.ult_actualizacion = ult_actualizacion;
+        this.estado = estado;
     }
 
 
-    public Acta(Integer codigo, Integer tipo, String descripcion, Character estatus, Date fecha, Date ult_actualizacion, Pdf pdf, Decanato decanato) {
+    public Acta(Integer codigo, Integer tipo, String descripcion, Character estatus, Date fecha, Date ult_actualizacion, Pdf pdf, Decanato decanato, Estado estado) {
         this.codigo = codigo;
         this.tipo = tipo;
         this.descripcion = descripcion;
@@ -69,6 +75,7 @@ public class Acta {
         this.ult_actualizacion = ult_actualizacion;
         this.pdf = pdf;
         this.decanato = decanato;
+        this.estado = estado;
     }
 
     public Integer getCodigo() {
@@ -119,6 +126,30 @@ public class Acta {
         this.ult_actualizacion = ult_actualizacion;
     }
 
+    public Pdf getPdf() {
+        return this.pdf;
+    }
+
+    public void setPdf(Pdf pdf) {
+        this.pdf = pdf;
+    }
+
+    public Decanato getDecanato() {
+        return this.decanato;
+    }
+
+    public void setDecanato(Decanato decanato) {
+        this.decanato = decanato;
+    }
+
+    public Estado getEstado() {
+        return this.estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
     public Acta codigo(Integer codigo) {
         this.codigo = codigo;
         return this;
@@ -149,6 +180,21 @@ public class Acta {
         return this;
     }
 
+    public Acta pdf(Pdf pdf) {
+        this.pdf = pdf;
+        return this;
+    }
+
+    public Acta decanato(Decanato decanato) {
+        this.decanato = decanato;
+        return this;
+    }
+
+    public Acta estado(Estado estado) {
+        this.estado = estado;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -157,12 +203,12 @@ public class Acta {
             return false;
         }
         Acta acta = (Acta) o;
-        return Objects.equals(codigo, acta.codigo) && Objects.equals(tipo, acta.tipo) && Objects.equals(descripcion, acta.descripcion) && Objects.equals(estatus, acta.estatus) && Objects.equals(fecha, acta.fecha) && Objects.equals(ult_actualizacion, acta.ult_actualizacion);
+        return Objects.equals(codigo, acta.codigo) && Objects.equals(tipo, acta.tipo) && Objects.equals(descripcion, acta.descripcion) && Objects.equals(estatus, acta.estatus) && Objects.equals(fecha, acta.fecha) && Objects.equals(ult_actualizacion, acta.ult_actualizacion) && Objects.equals(pdf, acta.pdf) && Objects.equals(decanato, acta.decanato) && Objects.equals(estado, acta.estado);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigo, tipo, descripcion, estatus, fecha, ult_actualizacion);
+        return Objects.hash(codigo, tipo, descripcion, estatus, fecha, ult_actualizacion, pdf, decanato, estado);
     }
 
     @Override
@@ -174,24 +220,11 @@ public class Acta {
             ", estatus='" + getEstatus() + "'" +
             ", fecha='" + getFecha() + "'" +
             ", ult_actualizacion='" + getUlt_actualizacion() + "'" +
+            ", pdf='" + getPdf() + "'" +
+            ", decanato='" + getDecanato() + "'" +
+            ", estado='" + getEstado() + "'" +
             "}";
     }
 
-
-    public Pdf getPdf() {
-        return this.pdf;
-    }
-
-    public void setPdf(Pdf pdf) {
-        this.pdf = pdf;
-    }
-
-    public Decanato getDecanato() {
-        return this.decanato;
-    }
-
-    public void setDecanato(Decanato decanato) {
-        this.decanato = decanato;
-    }
 
 }

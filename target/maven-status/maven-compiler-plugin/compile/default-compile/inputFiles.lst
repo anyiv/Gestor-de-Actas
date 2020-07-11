@@ -1,37 +1,40 @@
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/repository/ActaRepository.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/exception/FileStorageException.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/payload/response/MessageResponse.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/exception/MyFileNotFoundException.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/security/services/UserDetailsImpl.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/payload/request/LoginRequest.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/model/Decanato.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/model/Role.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/model/ReporteController.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/repository/RolRepository.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/repository/DecanatoRepository.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/controller/DecanatoController.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/controller/ActaController.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/security/jwt/JwtUtils.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/security/WebSecurityConfig.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/security/services/UserDetailsServiceImpl.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/security/jwt/AuthTokenFilter.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/payload/response/JwtResponse.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/controller/AuthController.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/controller/DashController.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/controller/PdfController.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/model/User.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/repository/UsuarioRepository.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/BackendApplication.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/payload/request/SignupRequest.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/service/DecanatoService.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/security/jwt/AuthEntryPointJwt.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/controller/TestController.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/model/ERole.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/service/ActaService.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/model/Pdf.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/repository/PdfRepository.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/payload/UploadFileResponse.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/service/PdfService.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/service/UsuarioService.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/repository/UserRepository.java
-/mnt/d/github/java_projects/laboratorio 2/lab2-back/src/main/java/com/lab2/backend/model/Acta.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/payload/response/MessageResponse.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/EstadoRepository.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/UserRepository.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/BackendApplication.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/security/services/UserDetailsServiceImpl.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Acta.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/exception/MyFileNotFoundException.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/PdfController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Estado.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/payload/request/SignupRequest.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/RolRepository.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/ERole.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Pdf.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/security/jwt/AuthEntryPointJwt.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/ActaService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/DecanatoService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/ReporteController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/DashController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Role.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/PdfService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/UsuarioRepository.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/security/jwt/JwtUtils.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/payload/request/LoginRequest.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/TestController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/User.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Decanato.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/AuthController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/exception/FileStorageException.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/DecanatoController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/ActaRepository.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/security/jwt/AuthTokenFilter.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/ActaController.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/payload/UploadFileResponse.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/UsuarioService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/payload/response/JwtResponse.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/security/services/UserDetailsImpl.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/service/EstadoService.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/security/WebSecurityConfig.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/DecanatoRepository.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/PdfRepository.java

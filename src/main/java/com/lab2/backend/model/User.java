@@ -44,9 +44,6 @@ public class User {
     @ManyToOne
     private Decanato decanato;
 
-    // @ManyToOne
-    // private TipoUsuario tipouser;
-
     //@ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_cedula"),

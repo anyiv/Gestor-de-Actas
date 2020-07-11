@@ -133,7 +133,6 @@ public class AuthController {
 
 	@GetMapping
 	public ResponseEntity<List<User>> findAll() {
-		System.out.println("hiii");
 		return ResponseEntity.ok(usuarioService.UsuriosActivos());
 	}
 	@PutMapping("/{id}")

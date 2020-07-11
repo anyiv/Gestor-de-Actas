@@ -29,7 +29,6 @@ public class Decanato {
     private Character estatus;
 
     @JsonIgnore
-
     @OneToMany(mappedBy="decanato")
     private List<User> users;
 
