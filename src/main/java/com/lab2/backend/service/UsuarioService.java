@@ -1,4 +1,5 @@
 package com.lab2.backend.service;
+import com.lab2.backend.model.Acta;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import com.lab2.backend.repository.UsuarioRepository;
 import com.lab2.backend.model.User;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 
@@ -19,6 +21,7 @@ public class UsuarioService {
         return userRepository.findAll();
     }
 
+    @Transactional
     public List<User> UsuriosActivos(){
         return userRepository.findByEstatus('A');
     }    
@@ -38,6 +41,7 @@ public class UsuarioService {
     public Long countUser(Character estatus){
         return userRepository.countByEstatus(estatus);
     }
+
 }
 
 

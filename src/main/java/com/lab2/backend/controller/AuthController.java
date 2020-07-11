@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import com.lab2.backend.model.*;
+import com.lab2.backend.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,11 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.lab2.backend.payload.request.LoginRequest;
 import com.lab2.backend.payload.request.SignupRequest;
@@ -49,6 +46,9 @@ public class AuthController {
 
 	@Autowired
 	JwtUtils jwtUtils;
+
+	@Autowired
+	private  UsuarioService usuarioService;
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -129,5 +129,31 @@ public class AuthController {
 		userRepository.save(user);
 
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+	}
+
+	@GetMapping
+	public ResponseEntity<List<User>> findAll() {
+		System.out.println("hiii");
+		return ResponseEntity.ok(usuarioService.UsuriosActivos());
+	}
+	@PutMapping("/{id}")
+	public ResponseEntity<User> update(@PathVariable String id, @Valid @RequestBody User user) {
+		if (!usuarioService.findById(id).isPresent()) {
+			ResponseEntity.badRequest().build();
+		}
+
+		return ResponseEntity.ok(usuarioService.save(user));
+	}
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity delete(@PathVariable String id) {
+		if (!usuarioService.findById(id).isPresent()) {
+			ResponseEntity.badRequest().build();
+		}
+		User user = new User();
+		user = usuarioService.findById(id).get();
+		user.setEstatus('I');
+		usuarioService.save(user);
+		return ResponseEntity.ok().build();
 	}
 }

@@ -42,7 +42,7 @@ public class ActaService {
     public void deleteById(Integer id) {
         actaRepository.deleteById(id);
     }
-
+    @Transactional
     public List<Acta> findByDecanato(Long id){
         Decanato decanato = new Decanato();
         decanato = decanatoRepository.findById(id).get();
