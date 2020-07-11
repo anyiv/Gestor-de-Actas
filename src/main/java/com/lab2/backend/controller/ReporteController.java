@@ -1,4 +1,4 @@
-package com.lab2.backend.model;
+package com.lab2.backend.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
