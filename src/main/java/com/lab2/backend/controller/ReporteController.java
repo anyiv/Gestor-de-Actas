@@ -24,4 +24,9 @@ public class ReporteController {
         return ResponseEntity.ok(actaService.contarActasPorDecanato(cod, mes));
     }
     
+    //Muestra una lista de las actas filtradas por acta y decanato
+    @GetMapping("/listadeActas/{cod}/{mes}")
+    public ResponseEntity<List<Acta>> listaActas(@PathVariable Long cod,@PathVariable Integer mes) {
+        return ResponseEntity.ok(actaService.findByMesYDecanato(cod, mes));
+    }
 }

@@ -17,4 +17,6 @@ public interface ActaRepository extends JpaRepository<Acta, Integer> {
     Integer findByActasYDecanato(Long cod, Integer mes);
     Acta findTopByOrderByCodigoDesc();
 
+    @Query("Select a from Acta a where a.decanato.codigo=?1 and a.estatus='A' and extract(month from a.fecha)=?2 ")
+    List<Acta> findByMesYDecanato(Long cod, Integer mes);
 }

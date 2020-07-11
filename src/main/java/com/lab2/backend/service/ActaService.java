@@ -59,4 +59,8 @@ public class ActaService {
     public Integer contarActasPorDecanato(Long cod, Integer mes){
         return actaRepository.findByActasYDecanato(cod, mes);
     }
+
+    public List<Acta> findByMesYDecanato(Long cod, Integer mes){
+        return actaRepository.findByMesYDecanato(cod, mes);
+    }
 }

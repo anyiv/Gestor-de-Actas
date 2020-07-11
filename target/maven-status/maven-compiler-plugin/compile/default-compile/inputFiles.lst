@@ -7,6 +7,7 @@
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/exception/MyFileNotFoundException.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/PdfController.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/Estado.java
+/home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/controller/EstadoController.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/payload/request/SignupRequest.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/repository/RolRepository.java
 /home/anyi/LabII/lab2-back/src/main/java/com/lab2/backend/model/ERole.java
